@@ -38,35 +38,35 @@ const output=`
 `;
 });
 
-// create reusable transporter object using the default SMTP transport
-let transporter = nodemailer.createTransport({
-    host: "mail.traversymedia.com",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: 'test@traversymedia.com', // generated ethereal user
-      pass: '123abc', // generated ethereal password
-    },
-    tls:{
-        rejectUnauthorised=false
-    }
-  });
+// // create reusable transporter object using the default SMTP transport
+// let transporter = nodemailer.createTransport({
+//     host: "mail.traversymedia.com",
+//     port: 587,
+//     secure: false, // true for 465, false for other ports
+//     auth: {
+//       user: 'test@traversymedia.com', // generated ethereal user
+//       pass: '123abc', // generated ethereal password
+//     },
+//     tls:{
+//         rejectUnauthorised=false
+//     }
+//   });
 
-  // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: '"Test" <test@traversymedia.com >', // sender address
-    to: "sarath.email2010@gmail.com", // list of receivers
-    subject: "Nodemailer 1 ✔", // Subject line
-    text: "Hello ICTAK?", // plain text body
-    html: output // html body
-  });
+//   // send mail with defined transport object
+//   let info = await transporter.sendMail({
+//     from: '"Test" <test@traversymedia.com >', // sender address
+//     to: "sarath.email2010@gmail.com", // list of receivers
+//     subject: "Nodemailer 1 ✔", // Subject line
+//     text: "Hello ICTAK?", // plain text body
+//     html: output // html body
+//   });
 
-  console.log("Message sent: %s", info.messageId);
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+//   console.log("Message sent: %s", info.messageId);
+//   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
  
-  res.render('contact',{'Email is sent'});
+//   res.render('contact',{'Email is sent'});
 
-main().catch(console.error);
+// main().catch(console.error);
 
 
 app.listen(3000,()=>
